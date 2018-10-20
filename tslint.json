@@ -1,0 +1,10 @@
+{
+  "extends": ["tslint-config-standard", "tslint-no-circular-imports"],
+  "rules": {
+    "no-null-keyword": false,
+    "await-promise": false,
+    "strict-type-predicates": false,
+    "jsdoc-format": false,
+    "no-empty-character-class": false
+  }
+}

@@ -1,0 +1,9 @@
+node_modules
+.vscode
+tmp
+temp
+src
+**/*.log
+tsconfig.json
+**/*.test.ts
+coverage

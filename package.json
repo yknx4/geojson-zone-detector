@@ -1,0 +1,77 @@
+{
+  "name": "geojson-zone-detector",
+  "version": "0.0.1",
+  "description": "tool to detect the zone (GeoJSON Polygon) of a given point. (Coordinates)",
+  "keywords": [
+    "geojson",
+    "point",
+    "coordinates",
+    "zone"
+  ],
+  "homepage": "https://github.com/yknx4/geojson-zone-detector",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yknx4/geojson-zone-detector.git"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test jest",
+    "test:ci": "yarn test --ci --maxWorkers=2 --coverage --forceExit",
+    "build": "rm -rf lib && tsc -p tsconfig.json",
+    "docs:api": "yarn build && api-extractor run && api-documenter markdown --input lib",
+    "docs:api:commit": "mv temp/geojson-zone-detector.api.ts etc/geojson-zone-detector.api.ts"
+  },
+  "author": {
+    "name": "Ale Figueroa Perez",
+    "email": "me@ale.world",
+    "url": "https://www.ale.world"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@turf/turf": "^5.1.6",
+    "geojson": "^0.5.0"
+  },
+  "peerDependencies": {
+    "lodash": "~4"
+  },
+  "devDependencies": {
+    "@microsoft/api-documenter": "^1.5.39",
+    "@microsoft/api-extractor": "^6.0.6",
+    "@turf/nearest-point-to-line": "^6.0.0",
+    "@turf/point-to-line-distance": "^6.0.0",
+    "@types/geojson": "^7946.0.4",
+    "@types/jest": "^23.3.5",
+    "@types/lodash": "~4",
+    "@types/request": "^2.47.1",
+    "husky": "^1.1.2",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
+    "semver": "^5.6.0",
+    "togeojson": "^0.16.0",
+    "ts-jest": "^23.10.4",
+    "tslint": "^5.11.0",
+    "tslint-config-standard": "^8.0.1",
+    "tslint-no-circular-imports": "^0.6.1",
+    "typescript": "^3.1.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "prettier --no-semi --single-quote --print-width 150 --write",
+      "tslint -p tsconfig.lint.json --fix -t verbose",
+      "git add"
+    ],
+    "**/*.{json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
