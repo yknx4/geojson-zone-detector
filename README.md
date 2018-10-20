@@ -1,12 +1,11 @@
-GeoJsonZoneDetector
-======
+# GeoJsonZoneDetector
 
 [![Version Badge][npm-img]][npm-url]
 
 [npm-img]: https://img.shields.io/npm/v/geojson-zone-detector.svg
 [npm-url]: https://www.npmjs.com/package/geojson-zone-detector
 
-***Tool to detect the zone (GeoJSON Polygon) of a given point. (Coordinates)***
+**_Tool to detect the zone (GeoJSON Polygon) of a given point. (Coordinates)_**
 
 ## Installation
 
@@ -30,6 +29,6 @@ GeoJsonZoneDetector uses <a href='http://geojson.org/'>GeoJSON</a> for all geogr
 
 Most GeoJsonZoneDetector functions work with GeoJSON features. These are pieces of data that represent a collection of properties (ie: population, elevation, zipcode, etc.) along with a geometry. GeoJSON has several geometry types such as:
 
-* Point
-* LineString
-* Polygon
+- Point
+- LineString
+- Polygon
